@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Message",
+  "description": "An object representing published message",
+  "additionalProperties": true,
+  "required": [
+    "message",
+    "messageId",
+    "createdAt",
+    "payload",
+    "context"
+  ],
+  "properties": {
+    "message": {
+      "description": "The message type",
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 64
+    },
+    "messageId": {
+      "description": "The message UUID",
+      "type": "string",
+      "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+    },
+    "createdAt": {
+      "type": "integer"
+    },
+    "context": {
+      "type": "object"
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}

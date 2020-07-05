@@ -134,7 +134,7 @@ resource "aws_api_gateway_deployment" "this" {
   lifecycle {
     create_before_destroy = true
   }
-  depends_on = [aws_api_gateway_integration.this, aws_api_gateway_method.this, aws_api_gateway_stage.this]
+  depends_on = [aws_api_gateway_integration.this, aws_api_gateway_method.this]
 }
 
 resource "aws_sqs_queue" "this" {
